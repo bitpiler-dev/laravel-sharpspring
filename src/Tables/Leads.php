@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Bitpiler\LaravelSharpspring\Table;
+namespace Bitpiler\LaravelSharpspring\Tables;
 
 
-class Lead extends AbstractTable
+class Leads extends AbstractTable
 {
     const getLeads = 'getLeads';
     const getLeadsDateRange = 'getLeadsDateRange';
@@ -12,7 +12,16 @@ class Lead extends AbstractTable
     const updateLeads = 'updateLeads';
     const updateLeadsV2 = 'updateLeadsV2';
 
-    public function index($data = [])
+    public function find($id)
+    {
+        $document = $this->call('getLeads', [
+            'id' => $id,
+        ]);
+
+        return $this->response($document);
+    }
+
+    public function get($data = [])
     {
         $limit = 500;
         $offset = 0;
@@ -27,4 +36,5 @@ class Lead extends AbstractTable
 
         return $this->response($document);
     }
+
 }

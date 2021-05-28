@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Bitpiler\LaravelSharpspring\Table;
+namespace Bitpiler\LaravelSharpspring\Tables;
 
 
 class Projects extends AbstractTable

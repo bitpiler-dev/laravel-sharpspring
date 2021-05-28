@@ -72,7 +72,7 @@ class SharpspringClient
      */
     public function __call($class, $parameters)
     {
-        $className = __NAMESPACE__.'\\Table\\'.ucfirst($class);
+        $className = __NAMESPACE__.'\\Tables\\'.ucfirst($class);
 
         if (class_exists($className)) {
             return call_user_func_array(array(
